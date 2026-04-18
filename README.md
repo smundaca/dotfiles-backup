@@ -1,14 +1,12 @@
 # NixOS Hyprland Dotfiles
 
-Backup de mi setup principal en NixOS.
-
-## Incluye
-- configuration.nix
-- hyprland.conf
-- hyprlock.conf
-- hypridle.conf
-- kitty/
-- waybar/
+## Estructura
+- `nixos/configuration.nix`
+- `hypr/hyprland.conf`
+- `hypr/hyprlock.conf`
+- `hypr/hypridle.conf`
+- `waybar/`
+- `kitty/`
 
 ## Estado
-Base funcional y respaldada.
+Backup funcional de mi setup principal.

@@ -1,43 +1,32 @@
 {
+ "position": "top",
   "layer": "top",
-  "position": "bottom",
-  "height": 58,
-  "spacing": 8,
+  "height": 32,
 
-  "modules-left": [
-    "custom/launcher",
-    "hyprland/workspaces"
-  ],
-
-  "modules-center": [
-    "clock"
-  ],
-
-  "modules-right": [
-    "custom/cpu_graph",
-    "custom/cpu_temp",
-    "custom/gpu",
-    "memory",
-    "custom/net_speed",
-    "pulseaudio",
-    "tray",
-    "custom/power"
-  ],
-
-  "custom/launcher": {
-    "format": "",
-    "tooltip": false,
-    "on-click": "~/.config/fuzzel/launch.sh"
-  },
-
-  "custom/power": {
-    "format": "",
-    "tooltip": false,
-    "on-click": "wlogout -b 1 -L 1500 -R 24 -T 70 -B 260"
-  },
+  "modules-left": ["hyprland/workspaces", "pulseaudio", "custom/net_speed"],
+  "modules-center": ["mpris"],
+  "modules-right": ["custom/cpu_temp", "memory", "tray", "clock"],
 
   "hyprland/workspaces": {
-    "format": "{name}"
+    "format": "{icon}",
+    "on-click": "activate",
+    "sort-by-number": true,
+    "persistent-workspaces": {
+    "DP-2": [1, 2, 3, 4, 5],
+    "HDMI-A-1": [6, 7, 8, 9, 10]
+    },
+      "format-icons": {
+      "1": "",
+      "2": "󰖟",
+      "3": "󰨞",
+      "4": "󰉋",
+      "5": "󰙯",
+      "6": "󰋩",
+      "7": "󰕧",
+      "8": "󰈙",
+      "9": "󰊗",
+      "10": "󰒓"
+    }
   },
 
   "clock": {
@@ -59,19 +48,22 @@
   },
 
   "tray": {
+    "icon-size": 14,
     "spacing": 10
-  },
-
-  "custom/net_speed": {
-    "exec": "~/.config/waybar/scripts/net_speed.sh",
-    "return-type": "json",
-    "interval": 2
   },
 
   "custom/cpu_temp": {
     "exec": "~/.config/waybar/scripts/cpu_temp.sh",
+    "interval": 5,
     "return-type": "json",
-    "interval": 2
+    "tooltip": true
+  },
+
+  "custom/net_speed": {
+    "exec": "~/.config/waybar/scripts/net_speed.sh",
+    "interval": 2,
+    "return-type": "json",
+    "tooltip": true
   },
 
   "custom/gpu": {
@@ -80,9 +72,19 @@
     "interval": 2
   },
 
-  "custom/cpu_graph": {
-    "exec": "~/.config/waybar/scripts/cpu_graph.sh",
-    "return-type": "json",
-    "interval": 2
+  "mpris": {
+  "format": "{player_icon} {dynamic}",
+  "format-paused": "{status_icon} {dynamic}",
+  "player-icons": {
+    "default": "",
+    "firefox": ""
+  },
+  "status-icons": {
+    "paused": ""
+  },
+  "dynamic-len": 45,
+  "max-length": 55,
+  "tooltip": false
   }
 }
+  

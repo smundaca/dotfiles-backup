@@ -1,0 +1,36 @@
+add_newline = true
+
+format = """
+[╭─](bold purple) $directory
+[╰─](bold purple) $time[  ❯❯❯](bold purple)
+"""
+
+[username]
+disabled = true
+
+[hostname]
+disabled = true
+
+[directory]
+truncation_length = 3
+truncate_to_repo = false
+home_symbol = "~"
+style = "bold lavender"
+format = "[$path]($style)"
+
+[directory.substitutions]
+"/etc/nixos" = "etc/nixos"
+"/etc" = "etc"
+"/home/reyben" = "~"
+"~/Descargas" = "~/Descargas"
+"~/Documentos" = "~/Documentos"
+"~/Imágenes" = "~/Imágenes"
+"~/Videos" = "~/Videos"
+"~/Música" = "~/Música"
+"~/dotfiles-backup" = "~/dotfiles"
+
+[time]
+disabled = false
+time_format = "%H:%M:%S"
+style = "bold #f5e0dc"
+format = "[ $time]($style)"

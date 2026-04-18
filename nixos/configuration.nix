@@ -79,7 +79,8 @@
     isNormalUser = true;
     description = "Reyben";
     extraGroups = [ "wheel" "networkmanager" ];
-    packages = with pkgs; [ ];
+    packages = with pkgs; [];
+    shell = pkgs.fish;
   };
 
   # Unfree
@@ -100,10 +101,18 @@
 
   # AppImage y binarios externos
   programs.appimage.enable = true;
- 
+
+  programs.fish.enable = true;
+
+  fonts.packages = with pkgs; [
+  nerd-fonts.jetbrains-mono
+  nerd-fonts.fira-code
+  ];
+
 
   environment.systemPackages = with pkgs; [
     # base
+    starship
     cliphist
     wlogout
     mangohud
