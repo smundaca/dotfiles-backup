@@ -1,0 +1,88 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "height": 58,
+  "spacing": 8,
+
+  "modules-left": [
+    "custom/launcher",
+    "hyprland/workspaces"
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "custom/cpu_graph",
+    "custom/cpu_temp",
+    "custom/gpu",
+    "memory",
+    "custom/net_speed",
+    "pulseaudio",
+    "tray",
+    "custom/power"
+  ],
+
+  "custom/launcher": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "~/.config/fuzzel/launch.sh"
+  },
+
+  "custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "wlogout -b 1 -L 1500 -R 24 -T 70 -B 260"
+  },
+
+  "hyprland/workspaces": {
+    "format": "{name}"
+  },
+
+  "clock": {
+    "format": "󰥔 {:%H:%M}",
+    "tooltip-format": "<big>{:%A %d %B %Y}</big>\n<tt>{calendar}</tt>"
+  },
+
+  "memory": {
+    "format": "󰍛 RAM {used}G",
+    "tooltip-format": "RAM usada: {used} GB\nRAM total: {total} GB\nUso: {percentage}%"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 mute",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"]
+    }
+  },
+
+  "tray": {
+    "spacing": 10
+  },
+
+  "custom/net_speed": {
+    "exec": "~/.config/waybar/scripts/net_speed.sh",
+    "return-type": "json",
+    "interval": 2
+  },
+
+  "custom/cpu_temp": {
+    "exec": "~/.config/waybar/scripts/cpu_temp.sh",
+    "return-type": "json",
+    "interval": 2
+  },
+
+  "custom/gpu": {
+    "exec": "~/.config/waybar/scripts/gpu.sh",
+    "return-type": "json",
+    "interval": 2
+  },
+
+  "custom/cpu_graph": {
+    "exec": "~/.config/waybar/scripts/cpu_graph.sh",
+    "return-type": "json",
+    "interval": 2
+  }
+}

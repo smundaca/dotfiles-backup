@@ -1,0 +1,131 @@
+** {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 16px;
+}
+
+window#waybar {
+  background: rgba(10, 10, 20, 0.55);
+  border-bottom: 2px solid rgba(0, 255, 255, 0.4);
+  padding: 6px 10px;
+}
+
+/* Workspaces */
+#workspaces button {
+  padding: 4px 10px;
+  margin: 2px;
+  border-radius: 8px;
+  color: #888;
+}
+
+#workspaces button.active {
+  background: #00ffff;
+  color: #000;
+}
+/* CPU & GPU dinámicos */
+
+#custom-cpu_temp {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: rgba(0,255,255,0.08);
+}
+#custom-cpu_temp.normal {
+  color: #00ff9f;
+}
+
+#custom-cpu_temp.warning {
+  color: #ffaa00;
+}
+
+#custom-cpu_temp.critical {
+  color: #ff0000;
+  text-shadow: 0 0 10px #ff0000;
+}
+
+#custom-gpu.normal {
+  color: #00c3ff;
+}
+
+#custom-gpu.warning {
+  color: #ff8800;
+}
+
+#custom-gpu.critical {
+  color: #ff0033;
+  text-shadow: 0 0 10px #ff0033;
+}
+
+/* Otros módulos */
+#clock {
+  color: #ff00ff;
+  font-weight: bold;
+}
+
+#memory {
+  color: #00ffff;
+}
+
+#network {
+  color: #00ffcc;
+}
+
+#pulseaudio {
+  color: #ff4444;
+}
+
+#custom-cpu_temp.normal {
+  color: #00ff9f;
+}
+
+#custom-cpu_temp.warning {
+  color: #ffaa00;
+}
+
+#custom-cpu_temp.critical {
+  color: #ff0033;
+  text-shadow: 0 0 12px #ff0033;
+}
+
+#custom-gpu.normal {
+  color: #00c3ff;
+}
+
+#custom-gpu.warning {
+  color: #ff8800;
+}
+
+#custom-gpu.critical {
+  color: #ff0033;
+  text-shadow: 0 0 12px #ff0033;
+}
+
+@keyframes rgb {
+  0% { color: #00ffff; }
+  25% { color: #ff00ff; }
+  50% { color: #00ff9f; }
+  75% { color: #ffaa00; }
+  100% { color: #00ffff; }
+}
+
+#custom-cava {
+  animation: rgb 5s linear infinite;
+  font-weight: bold;
+}
+
+#custom-cpu_graph {
+  color: #00ffff;
+  text-shadow: 0 0 6px #00ffff;
+}
+
+#clock,
+#memory,
+#network,
+#pulseaudio,
+#custom-cpu_temp,
+#custom-gpu,
+#custom-cpu_graph {
+  margin: 0 14px;
+  padding: 6px 10px;
+}
+
+
+
